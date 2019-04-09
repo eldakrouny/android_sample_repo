@@ -16,6 +16,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    lintOptions {
+        htmlReport true
+        htmlOutput file("lint-report.html")
+        abortOnError true
+        warningsAsErrors true
+        textOutput 'stdout'
+        lintConfig file("../config/quality/lint.xml")
+    }
 }
 
 dependencies {
