@@ -3,8 +3,8 @@ android:
   components:
     # Uncomment the lines below if you want to
     # use the latest revision of Android SDK Tools
-    # - tools
-    # - platform-tools
+    - tools
+    - platform-tools
 
     # The BuildTools version used by your project
     - build-tools-28.0.3
@@ -16,11 +16,17 @@ android:
     - extra-google-google_play_services
     - extra-google-m2repository
     - extra-android-m2repository
+    - extra
+    - add-on
 
     # Specify at least one system image,
     # if you need to run emulator(s) during your tests
-    - sys-img-x86-android-26
+    - sys-img-x86-android-28
     #- sys-img-armeabi-v7a-android-17
+  
+  licenses:
+    - 'android-sdk-license-.+'
+    - 'google-gdk-license-.+'
 env:
   global:
    # install timeout in minutes (2 minutes by default)
@@ -28,7 +34,7 @@ env:
 
 # Emulator Management: Create, Start and Wait
 before_script:
-  - echo no | android create avd --force -n test -t android-28 --abi x86 -c 100M
+  - echo no | android create avd --force -n test -t android-28 -k "system-images;android-28;google_apis;x86"
   - emulator -avd test -no-skin -no-audio -no-window &
   - android-wait-for-emulator
   - adb shell input keyevent 82 &
