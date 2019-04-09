@@ -2,6 +2,8 @@
 <lint>
     <!-- Disable the given check in this project -->
     <issue id="IconMissingDensityFolder" severity="ignore" />
+	<issue id="GoogleAppIndexingWarning" severity="ignore" />
+	
 
     <!-- Ignore the InconsistentLayout issue in the specified file -->
     <issue id="InconsistentLayout">
