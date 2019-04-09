@@ -29,6 +29,7 @@ android:
     - 'google-gdk-license-.+'
 before_install:
   #- yes | sdkmanager "platforms;android-28"
+  android update sdk --no-ui --all --filter platform-tools,sys-img-x86-android-28
 env:
   global:
    # install timeout in minutes (2 minutes by default)
