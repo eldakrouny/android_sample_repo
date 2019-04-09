@@ -21,15 +21,15 @@ android:
 
     # Specify at least one system image,
     # if you need to run emulator(s) during your tests
-    - sys-img-x86-android-27
+    - sys-img-x86-android-25
     #- sys-img-armeabi-v7a-android-18
   
   licenses:
     - 'android-sdk-license-.+'
     - 'google-gdk-license-.+'
 before_install:
-  #- yes | sdkmanager "platforms;android-28"
-  - echo y | android update sdk --no-ui --all --filter sys-img-x86-android-27
+  - yes | sdkmanager "platforms;android-25"
+  - echo y | android update sdk --no-ui --all --filter sys-img-x86-android-25
 env:
   global:
    # install timeout in minutes (2 minutes by default)
@@ -38,7 +38,7 @@ env:
 # Emulator Management: Create, Start and Wait
 before_script:
   - android list targets
-  - echo no | android create avd --force -n test -t android-27
+  - echo no | android create avd --force -n test -t android-25
   #-k "system-images;android-28;google_apis;x86"
   - emulator -avd test -no-audio -no-window &
   - android-wait-for-emulator
