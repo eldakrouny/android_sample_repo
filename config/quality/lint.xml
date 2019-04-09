@@ -3,16 +3,12 @@
     <!-- Disable the given check in this project -->
     <issue id="IconMissingDensityFolder" severity="ignore" />
 
-    <!-- Ignore the ObsoleteLayoutParam issue in the specified files -->
-    <issue id="ObsoleteLayoutParam">
-        <ignore path="res/layout/activation.xml" />
-        <ignore path="res/layout-xlarge/activation.xml" />
+    <!-- Ignore the InconsistentLayout issue in the specified file -->
+    <issue id="InconsistentLayout">
+        <ignore path="res/layout-w900dp/item_list.xml" />
+		<ignore path="res/layout/item_list.xml" />
     </issue>
-
-    <!-- Ignore the UselessLeaf issue in the specified file -->
-    <issue id="UselessLeaf">
-        <ignore path="res/layout/main.xml" />
-    </issue>
+	
 
     <!-- Change the severity of hardcoded strings to "error" -->
     <issue id="HardcodedText" severity="error" />
